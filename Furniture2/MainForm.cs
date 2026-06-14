@@ -85,14 +85,22 @@ namespace Furniture2
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedIndex == 0)
+            if (comboBox1.SelectedIndex == 0)
+            {
                 textBox1.Clear();
-            radioButton1.Checked = false;
-            radioButton2.Checked = false;
-            sort = "";
-            filter = "";
-            sort = "order by price ASC";
-            SetProduct();
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
+                sort = "";
+                filter = "";
+                sort = "order by price ASC";
+                SetProduct();
+            }
+            else
+            {
+                filter = comboBox1.Text;
+                SetProduct();
+                
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
